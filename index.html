@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flashcards Escolares</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3e5f5;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .flashcard {
+      background-color: #7e57c2;
+      color: white;
+      width: 250px;
+      height: 150px;
+      margin: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s, background-color 0.3s;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .flashcard:hover {
+      transform: scale(1.05);
+      background-color: #673ab7;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="flashcard" onclick="flip(this)" data-question="Quanto é 7 x 8?" data-answer="56">Quanto é 7 x 8?</div>
+  <div class="flashcard" onclick="flip(this)" data-question="Qual é a capital do Brasil?" data-answer="Brasília">Qual é a capital do Brasil?</div>
+  <div class="flashcard" onclick="flip(this)" data-question="Quem descobriu o Brasil?" data-answer="Pedro Álvares Cabral">Quem descobriu o Brasil?</div>
+  <div class="flashcard" onclick="flip(this)" data-question="O que é um substantivo?" data-answer="É uma palavra que nomeia seres, objetos, sentimentos.">O que é um substantivo?</div>
+  <div class="flashcard" onclick="flip(this)" data-question="Quanto é 12 dividido por 3?" data-answer="4">Quanto é 12 dividido por 3?</div>
+  <div class="flashcard" onclick="flip(this)" data-question="Qual é o maior planeta do sistema solar?" data-answer="Júpiter">Qual é o maior planeta do sistema solar?</div>
+  <div class="flashcard" onclick="flip(this)" data-question="O que é um verbo?" data-answer="É uma palavra que indica ação, estado ou fenômeno da natureza.">O que é um verbo?</div>
+  <div class="flashcard" onclick="flip(this)" data-question="Em que ano começou a Segunda Guerra Mundial?" data-answer="1939">Em que ano começou a Segunda Guerra Mundial?</div>
+  <div class="flashcard" onclick="flip(this)" data-question="Qual o símbolo químico da água?" data-answer="H₂O">Qual o símbolo químico da água?</div>
+  <div class="flashcard" onclick="flip(this)" data-question="Quantos continentes existem?" data-answer="7">Quantos continentes existem?</div>
+
+  <script>
+    function flip(card) {
+      const currentText = card.innerText;
+      const question = card.getAttribute('data-question');
+      const answer = card.getAttribute('data-answer');
+      card.innerText = currentText === question ? answer : question;
+    }
+  </script>
+
+</body>
+</html>
